@@ -66,3 +66,44 @@ echo $xml->book[0]->title. "<br>";
 echo $xml->book[1]->title. "<br>";
 
    ?>
+
+
+
+   <?php
+
+$xml = simplexml_load_file("ppxm.xml") or die ("error");
+
+foreach ($xml->children() as $books) {
+  echo $books->title. ", ";
+  echo $books->author. ", ";
+  echo $books->year. ", ";
+  echo $books->price. ", " . "<br>";
+}
+
+    ?>
+
+
+
+    <?php
+
+$xml = simplexml_load_file("ppxm.xml") or die ("error");
+echo $xml ->book[0]["category"]. "<br>";
+echo $xml ->book[1]->title["lang"]. "<br>";
+
+echo "<br>";
+     ?>
+
+
+
+     <?php
+
+$xml = simplexml_load_file("ppxm.xml") or die ("error");
+
+foreach ($xml->children() as $books) {
+  echo $books->title["lang"];
+  echo "<br>";
+  // code...
+}
+
+
+      ?>
